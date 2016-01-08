@@ -1,0 +1,245 @@
+gautham@ubuntu:~/Documents$ cd Unix_system_programming/
+gautham@ubuntu:~/Documents/Unix_system_programming$ mkdir sample
+gautham@ubuntu:~/Documents/Unix_system_programming$ cd sample/
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ cp ../assignment\ 1.txt  .
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ ls
+assignment 1.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ stat
+stat: missing operand
+Try 'stat --help' for more information.
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ stat assignment\ 1.txt 
+  File: ‘assignment 1.txt’
+  Size: 1689      	Blocks: 8          IO Block: 4096   regular file
+Device: 801h/2049d	Inode: 401663      Links: 1
+Access: (0640/-rw-r-----)  Uid: ( 1000/ gautham)   Gid: ( 1000/ gautham)
+Access: 2016-01-08 21:54:04.087249573 +0530
+Modify: 2016-01-08 21:54:04.087249573 +0530
+Change: 2016-01-08 21:54:04.087249573 +0530
+ Birth: -
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ ls -l
+total 4
+-rw-r----- 1 gautham gautham 1689 Jan  8 21:54 assignment 1.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ cp assignment\ 1.txt  assign2.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ ls
+assign2.txt  assignment 1.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ ls -l
+total 8
+-rw-r----- 1 gautham gautham 1689 Jan  8 21:55 assign2.txt
+-rw-r----- 1 gautham gautham 1689 Jan  8 21:54 assignment 1.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ stat assign2.txt 
+  File: ‘assign2.txt’
+  Size: 1689      	Blocks: 8          IO Block: 4096   regular file
+Device: 801h/2049d	Inode: 401662      Links: 1
+Access: (0640/-rw-r-----)  Uid: ( 1000/ gautham)   Gid: ( 1000/ gautham)
+Access: 2016-01-08 21:55:52.303247525 +0530
+Modify: 2016-01-08 21:55:52.303247525 +0530
+Change: 2016-01-08 21:55:52.303247525 +0530
+ Birth: -
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ cp a b
+cp: cannot stat ‘a’: No such file or directory
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ umask
+0002
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ touch some_file.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ ls -l
+total 8
+-rw-r----- 1 gautham gautham 1689 Jan  8 21:55 assign2.txt
+-rw-r----- 1 gautham gautham 1689 Jan  8 21:54 assignment 1.txt
+-rw-rw-r-- 1 gautham gautham    0 Jan  8 21:59 some_file.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ cat some_file.txt 
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ umask 0022
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ umask
+0022
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ cp some_file.txt some_file_cp.txt 
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ ls -l
+total 8
+-rw-r----- 1 gautham gautham 1689 Jan  8 21:55 assign2.txt
+-rw-r----- 1 gautham gautham 1689 Jan  8 21:54 assignment 1.txt
+-rw-r--r-- 1 gautham gautham    0 Jan  8 22:10 some_file_cp.txt
+-rw-rw-r-- 1 gautham gautham    0 Jan  8 21:59 some_file.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ cp some_file.txt some_file.txt 
+cp: ‘some_file.txt’ and ‘some_file.txt’ are the same file
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ mkdir sample
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ cd sample/
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ cd ..
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ rmdir sample/
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ ls
+assign2.txt  assignment 1.txt  some_file_cp.txt  some_file.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample$ mkdir sample && cd sample
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ln ../some_file.txt 
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ls
+some_file.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ rm some_file.txt 
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ rm some_file.txt some_file_ln.txt
+rm: cannot remove ‘some_file.txt’: No such file or directory
+rm: cannot remove ‘some_file_ln.txt’: No such file or directory
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ln ../some_file.txt some_file_ln.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ls
+some_file_ln.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ls -l
+total 0
+-rw-rw-r-- 2 gautham gautham 0 Jan  8 21:59 some_file_ln.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ stat some_file_ln.txt 
+  File: ‘some_file_ln.txt’
+  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file
+Device: 801h/2049d	Inode: 401664      Links: 2
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/ gautham)   Gid: ( 1000/ gautham)
+Access: 2016-01-08 22:02:26.539240062 +0530
+Modify: 2016-01-08 21:59:24.411243510 +0530
+Change: 2016-01-08 22:18:43.423221571 +0530
+ Birth: -
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ cp some_file_ln.txt some_file_ln_cp.txt 
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ls -l
+total 0
+-rw-r--r-- 1 gautham gautham 0 Jan  8 22:22 some_file_ln_cp.txt
+-rw-rw-r-- 2 gautham gautham 0 Jan  8 21:59 some_file_ln.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ umask
+0022
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ vi some_file_ln.txt 
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ls -ltotal 4
+-rw-r--r-- 1 gautham gautham  0 Jan  8 22:22 some_file_ln_cp.txt
+-rw-rw-r-- 2 gautham gautham 23 Jan  8 22:24 some_file_ln.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ cat a.txt
+cat: a.txt: No such file or directory
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ abcdefgh > cat a.txt
+abcdefgh: command not found
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ touch file.txtgautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ cat file.txt 
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ cat file.txt <abcd
+bash: abcd: No such file or directory
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ cat file.txt <"abcd"
+bash: abcd: No such file or directory
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ vi file.txt 
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ls
+cat  file.txt  some_file_ln_cp.txt  some_file_ln.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ls -l
+total 8
+-rw-r--r-- 1 gautham gautham  0 Jan  8 22:31 cat
+-rw-r--r-- 1 gautham gautham 11 Jan  8 22:32 file.txt
+-rw-r--r-- 1 gautham gautham  0 Jan  8 22:22 some_file_ln_cp.txt
+-rw-rw-r-- 2 gautham gautham 23 Jan  8 22:24 some_file_ln.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ rm cat
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ls -l
+total 8
+-rw-r--r-- 1 gautham gautham 11 Jan  8 22:32 file.txt
+-rw-r--r-- 1 gautham gautham  0 Jan  8 22:22 some_file_ln_cp.txt
+-rw-rw-r-- 2 gautham gautham 23 Jan  8 22:24 some_file_ln.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ln file.txt file_ln.txt 
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ls -l
+total 12
+-rw-r--r-- 2 gautham gautham 11 Jan  8 22:32 file_ln.txt
+-rw-r--r-- 2 gautham gautham 11 Jan  8 22:32 file.txt
+-rw-r--r-- 1 gautham gautham  0 Jan  8 22:22 some_file_ln_cp.txt
+-rw-rw-r-- 2 gautham gautham 23 Jan  8 22:24 some_file_ln.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ vi file
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ls -l
+total 12
+-rw-r--r-- 2 gautham gautham 11 Jan  8 22:32 file_ln.txt
+-rw-r--r-- 2 gautham gautham 11 Jan  8 22:32 file.txt
+-rw-r--r-- 1 gautham gautham  0 Jan  8 22:22 some_file_ln_cp.txt
+-rw-rw-r-- 2 gautham gautham 23 Jan  8 22:24 some_file_ln.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ vi file.txt 
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ls -l
+total 12
+-rw-r--r-- 2 gautham gautham 35 Jan  8 22:34 file_ln.txt
+-rw-r--r-- 2 gautham gautham 35 Jan  8 22:34 file.txt
+-rw-r--r-- 1 gautham gautham  0 Jan  8 22:22 some_file_ln_cp.txt
+-rw-rw-r-- 2 gautham gautham 23 Jan  8 22:24 some_file_ln.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ cat file_ln.txt 
+this is the first line.
+some line.
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ cat file.txt 
+this is the first line.
+some line.
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ cp file_ln.txt file_ln_cp.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ls -ltotal 16
+-rw-r--r-- 1 gautham gautham 35 Jan  8 22:35 file_ln_cp.txt
+-rw-r--r-- 2 gautham gautham 35 Jan  8 22:34 file_ln.txt
+-rw-r--r-- 2 gautham gautham 35 Jan  8 22:34 file.txt
+-rw-r--r-- 1 gautham gautham  0 Jan  8 22:22 some_file_ln_cp.txt
+-rw-rw-r-- 2 gautham gautham 23 Jan  8 22:24 some_file_ln.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ vi file_ln_cp.txt 
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ cat file_ln_cp.txt 
+Badding some more lines.
+B
+this is the first line.
+some line.
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ cat file_ln.txt 
+this is the first line.
+some line.
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ cat file.txt
+this is the first line.
+some line.
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ls -al
+total 24
+drwxr-xr-x 2 gautham gautham 4096 Jan  8 22:36 .
+drwxrwxr-x 3 gautham gautham 4096 Jan  8 22:17 ..
+-rw-r--r-- 1 gautham gautham   62 Jan  8 22:36 file_ln_cp.txt
+-rw-r--r-- 2 gautham gautham   35 Jan  8 22:34 file_ln.txt
+-rw-r--r-- 2 gautham gautham   35 Jan  8 22:34 file.txt
+-rw-r--r-- 1 gautham gautham    0 Jan  8 22:22 some_file_ln_cp.txt
+-rw-rw-r-- 2 gautham gautham   23 Jan  8 22:24 some_file_ln.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ls -l
+total 16
+-rw-r--r-- 1 gautham gautham 62 Jan  8 22:36 file_ln_cp.txt
+-rw-r--r-- 2 gautham gautham 35 Jan  8 22:34 file_ln.txt
+-rw-r--r-- 2 gautham gautham 35 Jan  8 22:34 file.txt
+-rw-r--r-- 1 gautham gautham  0 Jan  8 22:22 some_file_ln_cp.txt
+-rw-rw-r-- 2 gautham gautham 23 Jan  8 22:24 some_file_ln.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ln -s file.txt file_ln-s.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ls -l
+total 16
+-rw-r--r-- 1 gautham gautham 62 Jan  8 22:36 file_ln_cp.txt
+lrwxrwxrwx 1 gautham gautham  8 Jan  8 22:40 file_ln-s.txt -> file.txt
+-rw-r--r-- 2 gautham gautham 35 Jan  8 22:34 file_ln.txt
+-rw-r--r-- 2 gautham gautham 35 Jan  8 22:34 file.txt
+-rw-r--r-- 1 gautham gautham  0 Jan  8 22:22 some_file_ln_cp.txt
+-rw-rw-r-- 2 gautham gautham 23 Jan  8 22:24 some_file_ln.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ls -l
+total 16
+-rw-r--r-- 1 gautham gautham 62 Jan  8 22:36 file_ln_cp.txt
+lrwxrwxrwx 1 gautham gautham  8 Jan  8 22:40 file_ln-s.txt -> file.txt
+-rw-r--r-- 2 gautham gautham 35 Jan  8 22:34 file_ln.txt
+-rw-r--r-- 2 gautham gautham 35 Jan  8 22:34 file.txt
+-rw-r--r-- 1 gautham gautham  0 Jan  8 22:22 some_file_ln_cp.txt
+-rw-rw-r-- 2 gautham gautham 23 Jan  8 22:24 some_file_ln.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ cat file_ln-s.txt 
+this is the first line.
+some line.
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ cp file_ln-s.txt file_ln-s_cp.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ stat file_ln-s.txt
+  File: ‘file_ln-s.txt’ -> ‘file.txt’
+  Size: 8         	Blocks: 0          IO Block: 4096   symbolic link
+Device: 801h/2049d	Inode: 401667      Links: 1
+Access: (0777/lrwxrwxrwx)  Uid: ( 1000/ gautham)   Gid: ( 1000/ gautham)
+Access: 2016-01-08 22:40:18.043197065 +0530
+Modify: 2016-01-08 22:40:12.115197177 +0530
+Change: 2016-01-08 22:40:12.115197177 +0530
+ Birth: -
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ stat file_ln-s_cp.txt
+  File: ‘file_ln-s_cp.txt’
+  Size: 35        	Blocks: 8          IO Block: 4096   regular file
+Device: 801h/2049d	Inode: 401672      Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 1000/ gautham)   Gid: ( 1000/ gautham)
+Access: 2016-01-08 22:41:30.123195701 +0530
+Modify: 2016-01-08 22:41:30.123195701 +0530
+Change: 2016-01-08 22:41:30.123195701 +0530
+ Birth: -
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ cat file_ln-s_cp.txt
+this is the first line.
+some line.
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ vi file_ln-s_cp.txt
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ cat file.txt
+this is the first line.
+some line.
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ cat file_ln-s.txt
+this is the first line.
+some line.
+gautham@ubuntu:~/Documents/Unix_system_programming/sample/sample$ ls -l
+total 20
+-rw-r--r-- 1 gautham gautham 62 Jan  8 22:36 file_ln_cp.txt
+-rw-r--r-- 1 gautham gautham 70 Jan  8 22:44 file_ln-s_cp.txt
+lrwxrwxrwx 1 gautham gautham  8 Jan  8 22:40 file_ln-s.txt -> file.txt
+-rw-r--r-- 2 gautham gautham 35 Jan  8 22:34 file_ln.txt
+-rw-r--r-- 2 gautham gautham 35 Jan  8 22:34 file.txt
+-rw-r--r-- 1 gautham gautham  0 Jan  8 22:22 some_file_ln_cp.txt
+-rw-rw-r-- 2 gautham gautham 23 Jan  8 22:24 some_file_ln.txt
+
