@@ -1,0 +1,60 @@
+1. does umask affect the file creation?
+Yes
+2. can we change umask with in a pgm in 'c'? any system call?
+Yes. Refer - http://www.gnu.org/software/libc/manual/html_node/Setting-Permissions.html
+	The functions in this section are declared in sys/stat.h.
+
+	Function: mode_t umask (mode_t mask)
+	Preliminary: | MT-Safe | AS-Safe | AC-Safe | See POSIX Safety Concepts.
+
+	The umask function sets the file creation mask of the current process to mask, and returns the previous value of the file creation mask.
+
+	Here is an example showing how to read the mask with umask without changing it permanently:
+
+	mode_t
+	read_umask (void)
+	{
+	  mode_t mask = umask (0);
+	  umask (mask);
+	  return mask;
+	}
+3. can we create an existing file?
+   in that case, what permissions come into effect?
+Yes. The file gets over-written. umask will have no effect. Permissions of the original file are retained.
+4. how big is the file descriptor array?
+Around 20.
+5. can we open a file twice for reading ?
+Yes.
+	in the same process?
+	Yes.
+	in two different processes of the same user?
+	Yes.
+	in two different processes of two different users?
+	Yes.
+6. If it is possible to open the file twice and get two file descriptors fd1 and fd2 and if we read x bytes using fd1 and x bytes using fd2, will they be
+    same?
+    Yes.
+    different?
+    No.
+or will this result in racing?
+	This won't result in racing because each file descriptor will have its associated cursor. Also, in both the cases only read is happening, so the file isn't getting modified.
+7. can we
+   a) lseek beyond the file?
+   Yes.
+   b) lseek before the beginning of file?
+   Yes.
+   c) lseek beyond the end of file and close the file?
+   Yes.
+      if we do this, will file size change?
+      No.
+   d) lseek beyond the end of file and write n bytes?
+   Yes.
+   e) if d is allowed, does it affect the file size?
+   Yes.
+	does the size indicate the actualsize occupied?
+	No. The size indicated by ls -l only shows the number of characters that are present in the file.Do ls -ls and the first column
+	in the output shows the number of blocks occupied by that file, which is the actual size occupied.
+   f) if e were possible, can we read the file sequentially till the end of file?
+   Yes.
+   g) if e is allowed, what happens if we copy the file into another? (Check this - what is expected?)
+   Only permissions are changed.
