@@ -1,0 +1,11 @@
+day 19:
+all about shared memory
+- a few experiments for you to try
+what happens on forking?
+what happens on execing?
+can we use this as client server?
+can we support multiple clients?
+can a client attach only for reading?
+what happens if the IPC is removed when a process
+has done a get
+has also done an attach?

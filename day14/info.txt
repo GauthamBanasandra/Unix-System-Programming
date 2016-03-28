@@ -1,0 +1,2 @@
+day 14:
+discussed some more of signals - then started discussing redirection

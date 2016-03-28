@@ -1,0 +1,54 @@
+	
+	var jobthread_widget_title;
+	var jobthread_widget_outer_style;
+	var jobthread_widget_inner_style;
+	var jobthread_widget_title_style;
+	var jobthread_widget_link_style;
+	var jobthread_widget_top_style;
+	var jobthread_widget_bottom_style;
+
+	if (!jobthread_widget_title) {
+		jobthread_widget_title = "Jobs";
+	}
+	if (!jobthread_widget_outer_style) {
+		jobthread_widget_outer_style = "background-color:#dddddd;border:1px solid #999999;width:160px;";
+	}
+	if (!jobthread_widget_inner_style) {
+		jobthread_widget_inner_style = "background-color:#ffffff;color:#666666;border:1px solid #999999;padding:10px 10px 2px 8px;font:11px Arial, Helvetica, Sans-serif;line-height:16px;";
+	}
+	if (!jobthread_widget_title_style) {
+		jobthread_widget_title_style = "color:#313131;font-weight:bold;";
+	}
+	if (!jobthread_widget_link_style) {
+		jobthread_widget_link_style = "color:#0464bb;font-size:11px;font-weight:normal;text-decoration:none;border:none;";
+	}
+	if (!jobthread_widget_top_style) {
+		jobthread_widget_top_style = "padding-top:8px;";
+	}
+	if (!jobthread_widget_bottom_style) {
+		jobthread_widget_bottom_style = "padding-bottom:4px;";
+	}
+	
+
+	document.write('<div style="' + jobthread_widget_outer_style + '"><div style="' + jobthread_widget_top_style + '"><div style="margin-left:10px;margin-bottom:8px;' + jobthread_widget_title_style + '">' + jobthread_widget_title + '</div></div><div style="' + jobthread_widget_inner_style + '"><div style="margin-bottom:5px;"><a href="http://www.jobthread.com/jt/jobs/widget_click.php?id=c0e4b3&job_id=10444693" style="' + jobthread_widget_link_style + '" target="_top">Java/Middleware Designer (Java,...</a><br />Dublin, Dublin, Ireland<br />Whitehall Resources Ltd</div><div style="margin-bottom:5px;"><a href="http://www.jobthread.com/jt/jobs/widget_click.php?id=c0e4b3&job_id=10462144" style="' + jobthread_widget_link_style + '" target="_top">Onsite-Supporter (w/m)</a><br />Bergkamen, Nordrhein-Westfalen, Germany<br />tecops personal GmbH</div><div style="margin-bottom:5px;"><a href="http://www.jobthread.com/jt/jobs/widget_click.php?id=c0e4b3&job_id=10404945" style="' + jobthread_widget_link_style + '" target="_top">Oberon it hotlist </a><br />texes, TX<br />Oberon it inc</div><div style="margin-bottom:5px;"><a href="http://www.jobthread.com/jt/jobs/widget_click.php?id=c0e4b3&job_id=10494785" style="' + jobthread_widget_link_style + '" target="_top">Technical Lead, Mobile Client...</a><br />Seattle, WA<br />RealNetworks, Inc.</div><div style="margin-bottom:5px;"><a href="http://www.jobthread.com/jt/jobs/widget_click.php?id=c0e4b3&job_id=9889537" style="' + jobthread_widget_link_style + '" target="_top">Experienced Programmer - Critically...</a><br />United Kingdom<br />Interactive Selection</div><div style="margin-bottom:5px;"><a href="http://www.jobthread.com/jt/jobs/widget_click.php?id=c0e4b3&job_id=10462305" style="' + jobthread_widget_link_style + '" target="_top">Software Tester (Linux, Security, up...</a><br />Darmstadt, Hessen, Germany<br />Optimus Search</div><div style="margin-bottom:5px;"><a href="http://www.jobthread.com/jt/jobs/widget_click.php?id=c0e4b3&job_id=10475742" style="' + jobthread_widget_link_style + '" target="_top">Anwendungsentwicklung und Portierung...</a><br />Bochum, Nordrhein-Westfalen, Germany<br />FERCHAU Engineering GmbH - Projekte</div><div style="margin-bottom:5px;"><a href="http://www.jobthread.com/jt/jobs/widget_click.php?id=c0e4b3&job_id=10495184" style="' + jobthread_widget_link_style + '" target="_top">C# developer - Reigate</a><br />Reigate, Surrey, United Kingdom<br />VMR Consultants</div><div style="margin-bottom:5px;"><a href="http://www.jobthread.com/jt/jobs/widget_click.php?id=c0e4b3&job_id=10254996" style="' + jobthread_widget_link_style + '" target="_top">Senior Software Engineer - DevOps</a><br />Manchester, Lancashire, United Kingdom<br />Music Group</div><div style="margin-bottom:5px;"><a href="http://www.jobthread.com/jt/jobs/widget_click.php?id=c0e4b3&job_id=10319052" style="' + jobthread_widget_link_style + '" target="_top">DevOps Engineer. @ New York, NY //...</a><br />New York City, NY<br />United Software Group</div><div style="margin-top:10px;margin-bottom:5px;"><a href="http://www.jobthread.com/" style="text-transform:uppercase;' + jobthread_widget_link_style + '">Post a Job &gt;</a></div></div><div style="' + jobthread_widget_bottom_style + ';text-align:center;margin-top:8px;cursor:pointer;display:block;visibility:visible;" onclick="window.location=\'http://www.jobthread.com/\';"><div style="text-transform:uppercase;font-family:Arial,Helvetica;font-size:9px;cursor:pointer;">Powered by JobThread</div><img src="http://static.jobthread.com/partners/jobthread/images/logo_small.gif" style="margin-top:4px;margin-bottom:4px;margin-left:auto;margin-right:auto;border:none;" /></a></div></div>');
+
+
+
+	
+	
+	var _qevents = _qevents || [];
+
+	(function() {
+	var elem = document.createElement('script');
+	elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+	elem.async = true;
+	elem.type = "text/javascript";
+	var scpt = document.getElementsByTagName('script')[0];
+	scpt.parentNode.insertBefore(elem, scpt);
+	})();
+
+	_qevents.push({
+		qacct: "p-dfaywUr_Oq7jw",
+		labels: ""
+	});
+	

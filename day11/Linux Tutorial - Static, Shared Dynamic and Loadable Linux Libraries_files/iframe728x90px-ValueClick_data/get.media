@@ -1,0 +1,16 @@
+{var dz=document;
+dz.writeln("<script type=\"text/javascript\">  ");
+dz.writeln("(function() {");
+dz.writeln("    var id = 3930419,");
+dz.writeln("        size = '728x90',");
+dz.writeln("        xqryenc = \"sid%3D51962%26m%3D1%26tp%3D5%26d%3Dj%26t%3Dn%26vcm_acv%3D1.1%26version%3D1.4%26c%3D0.4554753476626233%26vcm_ifr%3D1%26vcm_xy%3D-1..-1%26vcm_vv%3Dtrue%26vcm_vm%3Dfalse%26vcm_pr%3Dhttp%253A%2F%2Fwww.yolinux.com%2FADVERTISING%2Fiframe728x90px-ValueClick.html%26vcm_tr%3D%26vcm_cr%3D%26ud%3DCSBCT12OzJg-EQAAAAAAAAAAGQAAAAAAAAAAIS1DHOviNvo_KAAwAGiElfG1BXACiAHJ4HyQAZnmJJgB_pUDoAEBqAEF8AIB\",");
+dz.writeln("        def_creative = \"media.fastclick.net\",");
+dz.writeln("        passback_pixel = \"http%3A%2F%2Fmedia.fastclick.net%2Fw%2Fimpix.cgi%3Fud%3DCSBCT12OzJg-EQAAAAAAAAAAGQAAAAAAAAAAIS1DHOviNvo_KAAwAGiElfG1BXACiAHJ4HyQAZnmJJgB_pUDoAEBqAEF8AIB\",");
+dz.writeln("        r = Math.random().toString(36).substring(7),");
+dz.writeln("        div_name = \"VCTag_\" + r,");
+dz.writeln("        cachebuster = new Date().getTime();");
+dz.writeln("    window.vc_default_fired = window.vc_default_fired || [];");
+dz.writeln("    window.vc_default_fired[r] = false;");
+dz.writeln("    document.write(\"<div id=\" + div_name + \"><script src='http://ib.adnxs.com/ttj?id=\" + id + \"&size=\" + size + \"&pt1=\" + xqryenc + \"&pt2=\" + r + \"&cb=\" + cachebuster + \"' type='text/javascript'></scr\" + \"ipt><script>(function () {var adn_accepted = (function () {var div = document.getElementById('\" + div_name + \"'), imgs = div.getElementsByTagName('img'); for (i=0; i < imgs.length; ++i){ if (imgs[i].src == 'http://cdn.fastclick.net/content/adv/cids/376/51376/spacer.gif' || imgs[i].src == 'https://secure.cdn.fastclick.net/content/adv/cids/376/51376/spacer.gif') {return true;}} return false;})(); if (!window.vc_default_fired['\" + r + \"'] && adn_accepted) {var i = document.createElement('img');i.src = decodeURIComponent('\" + passback_pixel + \"');} else if (!adn_accepted) {document.write('<scr'+ 'ipt src=\\\"http://media.fastclick.net/w/get.media?xqryenc=\" + xqryenc + \"&pbls=1\\\"></scr'+ 'ipt>');} }())</scr\" + \"ipt></div>\");");
+dz.writeln("}())");
+dz.writeln("<\/script>");}

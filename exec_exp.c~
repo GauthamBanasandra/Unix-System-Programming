@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+void show();
+
+int main()
+{
+	atexit(show);
+	printf("in main\n");
+	return 0;
+}
+
+void show()
+{
+	printf("in show\n");
+}
