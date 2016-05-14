@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	if((fd = open(argv[1], O_RDONLY)) == -1)
 		error("can't open file");
 	
-	for(pos = lseek(fd, -1, SEEK_END); pos>=0; lseek(fd, --pos, SEEK_SET);)
+	for(pos = lseek(fd, -1, SEEK_END); pos>=0; lseek(fd, --pos, SEEK_SET))
 	{
 		read(fd, &buf, sizeof(char));
 		printf("%c", buf);
