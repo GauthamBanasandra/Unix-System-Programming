@@ -1,0 +1,4 @@
+hello
+I'm writing something more here.
+I'm totally a beginner.
+I don't know how to use vi.
